@@ -1,0 +1,89 @@
+{
+  "name": "@tptshk/vue-form-builder",
+  "description": "Vue Form Builder",
+  "version": "0.1.1",
+  "main": "dist/vue-form-builder.umd.js",
+  "module": "dist/vue-form-builder.esm.js",
+  "unpkg": "dist/vue-form-builder.iife.js",
+  "types": "dist/main.d.ts",
+  "keywords": [
+    "vue",
+    "form",
+    "builder",
+    "constructor",
+    "generator",
+    "scheme"
+  ],
+  "author": "Taras Bilohan <taras.bilohan@gmail.com> (https://github.com/tarasbilohan)",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarasbilohan/vue-form-builder.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "bugs": {
+    "url": "https://github.com/tarasbilohan/vue-form-builder/issues"
+  },
+  "homepage": "https://github.com/tarasbilohan/vue-form-builder#readme",
+  "scripts": {
+    "watch": "rollup --config rollup.config.js --watch",
+    "build": "rollup --config rollup.config.js",
+    "test:unit": "",
+    "lint:scripts": "npx eslint --config .eslintrc.js --ext .js,.ts,.vue src/",
+    "lint:styles": "stylelint **/*.{vue,scss}",
+    "lint": "npm run lint:scripts && npm run lint:styles"
+  },
+  "dependencies": {
+    "core-js": "^3.4.4",
+    "lodash": "^4.17.15",
+    "vue": "^2.6.10"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-transform-runtime": "^7.7.6",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/runtime": "^7.7.7",
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-node-resolve": "^6.1.0",
+    "@types/dom-inputevent": "^1.0.5",
+    "@types/jest": "^24.0.19",
+    "@types/lodash": "^4.14.149",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "@vue/eslint-config-typescript": "^4.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-plugin-lodash": "^3.3.4",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "husky": "^3.1.0",
+    "lint-staged": "^9.5.0",
+    "node-sass": "^4.12.0",
+    "rollup": "^1.28.0",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-cleanup": "^3.1.1",
+    "rollup-plugin-scss": "^2.1.0",
+    "rollup-plugin-typescript2": "^0.25.3",
+    "rollup-plugin-vue": "^5.1.4",
+    "sass-loader": "^8.0.0",
+    "stylelint": "^12.0.1",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-scss": "^3.13.0",
+    "tslib": "^1.10.0",
+    "typescript": "^3.7.4",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{vue,scss}": [
+      "npm run lint:styles"
+    ],
+    "*.{ts,js,vue}": [
+      "npm run lint:scripts"
+    ]
+  }
+}
