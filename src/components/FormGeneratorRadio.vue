@@ -1,10 +1,9 @@
 <template>
-  <form-generator-form-item
+  <form-generator-form-field
     :class-name="formGroupClassName"
     class="form-generator-radio"
   >
     <form-generator-label
-      slot="label"
       :for-input="id"
       :label="label"
       :required="required"
@@ -12,12 +11,13 @@
     <div class="radio-buttons">
       <label
         v-for="option in options"
-        :key="option.key"
+        :key="option.value"
         class="radio-button"
       >
         <input
           :value="option.value"
           :checked="option.value === value"
+          :disabled="disabled"
           type="radio"
           class="radio-button__input"
           @change="onChange"
@@ -28,22 +28,20 @@
       </label>
     </div>
     <form-generator-help
-      slot="help"
       :help="help"
     />
     <form-generator-error
-      slot="error"
       :errors="errors"
     />
-  </form-generator-form-item>
+  </form-generator-form-field>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
 
-import { ErrorMessages } from '../types'
+import { ErrorMessages, RadioOptions } from '../types'
 
-import FormGeneratorFormItem from './FormGeneratorFormItem.vue'
+import FormGeneratorFormField from './FormGeneratorFormField.vue'
 import FormGeneratorLabel from './FormGeneratorLabel.vue'
 import FormGeneratorHelp from './FormGeneratorHelp.vue'
 import FormGeneratorError from './FormGeneratorError.vue'
@@ -51,14 +49,14 @@ import FormGeneratorError from './FormGeneratorError.vue'
 export default Vue.extend({
   name: 'FormGeneratorRadio',
   components: {
-    FormGeneratorFormItem,
+    FormGeneratorFormField,
     FormGeneratorLabel,
     FormGeneratorHelp,
     FormGeneratorError
   },
   props: {
     id: {
-      type: String as () => string,
+      type: String,
       required: true
     },
     value: {
@@ -70,23 +68,27 @@ export default Vue.extend({
       default: () => []
     },
     label: {
-      type: String as () => string,
+      type: String,
       default: ''
     },
     options: {
-      type: Array as () => { value: string, label: string }[],
+      type: Array as () => RadioOptions,
       required: true
     },
     formGroupClassName: {
-      type: String as () => string,
+      type: String,
       default: ''
     },
     help: {
-      type: String as () => string,
+      type: String,
       default: ''
     },
     required: {
-      type: Boolean as () => boolean,
+      type: Boolean,
+      default: true
+    },
+    disabled: {
+      type: Boolean,
       default: true
     }
   },
@@ -95,6 +97,7 @@ export default Vue.extend({
       const target = event.target as HTMLInputElement
 
       this.$emit('update:value', target.value)
+      this.$emit('input', target.value)
     }
   }
 })

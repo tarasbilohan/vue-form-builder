@@ -1,16 +1,16 @@
 <template>
-  <form-generator-form-item
+  <form-generator-form-field
     :class-name="formGroupClassName"
     class="form-generator-select"
   >
     <form-generator-label
-      slot="label"
       :for-input="id"
       :label="label"
       :required="required"
     />
     <select
       v-model="computedValue"
+      :disabled="disabled"
       class="form-generator-select__select"
     >
       <option value="">
@@ -25,14 +25,12 @@
       </option>
     </select>
     <form-generator-help
-      slot="help"
       :help="help"
     />
     <form-generator-error
-      slot="error"
       :errors="errors"
     />
-  </form-generator-form-item>
+  </form-generator-form-field>
 </template>
 
 <script lang="ts">
@@ -40,7 +38,7 @@ import Vue from 'vue'
 
 import { ErrorMessages, SelectOptions } from '../types'
 
-import FormGeneratorFormItem from './FormGeneratorFormItem.vue'
+import FormGeneratorFormField from './FormGeneratorFormField.vue'
 import FormGeneratorLabel from './FormGeneratorLabel.vue'
 import FormGeneratorHelp from './FormGeneratorHelp.vue'
 import FormGeneratorError from './FormGeneratorError.vue'
@@ -48,14 +46,14 @@ import FormGeneratorError from './FormGeneratorError.vue'
 export default Vue.extend({
   name: 'FormGeneratorSelect',
   components: {
-    FormGeneratorFormItem,
+    FormGeneratorFormField,
     FormGeneratorLabel,
     FormGeneratorHelp,
     FormGeneratorError
   },
   props: {
     id: {
-      type: String as () => string,
+      type: String,
       required: true
     },
     value: {
@@ -67,7 +65,7 @@ export default Vue.extend({
       default: () => []
     },
     label: {
-      type: String as () => string,
+      type: String,
       default: ''
     },
     options: {
@@ -75,19 +73,23 @@ export default Vue.extend({
       required: true
     },
     formGroupClassName: {
-      type: String as () => string,
+      type: String,
       default: ''
     },
     placeholder: {
-      type: String as () => string,
+      type: String,
       default: 'Please select'
     },
     help: {
-      type: String as () => string,
+      type: String,
       default: ''
     },
     required: {
-      type: Boolean as () => boolean,
+      type: Boolean,
+      default: true
+    },
+    disabled: {
+      type: Boolean,
       default: true
     }
   },
@@ -103,14 +105,20 @@ export default Vue.extend({
       },
       set (value: string | number) {
         this.$emit('update:value', value)
+        this.$emit('change', value)
       }
     }
   },
-  async mounted () {
-    if (typeof this.options === 'function') {
-      this.selectOptions = await this.options()
-    } else {
-      this.selectOptions = this.options
+  watch: {
+    options: {
+      async handler (options) {
+        if (typeof options === 'function') {
+          this.selectOptions = await options()
+        } else {
+          this.selectOptions = options
+        }
+      },
+      immediate: true
     }
   }
 })
@@ -124,6 +132,7 @@ export default Vue.extend({
     border-radius: 4px;
     border: solid 1px #d2d2d2;
     padding: 0 10px;
+    background: #fff;
 
     &::placeholder {
       opacity: 0.5;

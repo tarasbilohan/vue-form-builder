@@ -1,12 +1,9 @@
 <template>
   <div
     :class="className"
-    class="form-generator-form-item"
+    class="form-generator-form-field"
   >
-    <slot name="label" />
     <slot />
-    <slot name="help" />
-    <slot name="error" />
   </div>
 </template>
 
@@ -14,10 +11,10 @@
 import Vue from 'vue'
 
 export default Vue.extend({
-  name: 'FormGeneratorFormItem',
+  name: 'FormGeneratorFormField',
   props: {
     className: {
-      type: String as () => string,
+      type: String,
       default: ''
     }
   }
@@ -25,7 +22,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.form-generator-form-item {
+.form-generator-form-field {
   margin-bottom: 15px;
 }
 </style>

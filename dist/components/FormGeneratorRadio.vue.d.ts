@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import { ErrorMessages } from '../types';
+import { ErrorMessages, RadioOptions } from '../types';
 declare const _default: import("vue/types/vue").ExtendedVue<Vue, unknown, {
     onChange(event: InputEvent): void;
 }, unknown, {
@@ -7,12 +7,10 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, unknown, {
     value: string | number;
     errors: ErrorMessages;
     label: string;
-    options: {
-        value: string;
-        label: string;
-    }[];
+    options: RadioOptions;
     formGroupClassName: string;
     help: string;
     required: boolean;
+    disabled: boolean;
 }>;
 export default _default;

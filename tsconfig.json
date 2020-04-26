@@ -11,8 +11,8 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "jest",
-      "dom-inputevent"
+      "webpack-env",
+      "jest"
     ],
     "paths": {
       "@/*": [
@@ -25,7 +25,8 @@
       "dom.iterable",
       "scripthost"
     ],
-    "declaration": true
+    "declaration": true,
+    "declarationDir": "./dist"
   },
   "include": [
     "src/**/*.ts",
@@ -35,7 +36,6 @@
     "tests/**/*.tsx"
   ],
   "exclude": [
-    "node_modules",
-    "tests"
+    "node_modules"
   ]
 }

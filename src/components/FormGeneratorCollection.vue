@@ -1,10 +1,9 @@
 <template>
-  <form-generator-form-item
+  <form-generator-form-field
     :class-name="formGroupClassName"
     class="form-generator-collection"
   >
     <form-generator-label
-      slot="label"
       :for-input="id"
       :label="label"
       :required="false"
@@ -27,28 +26,28 @@
           @update:model="onItemModelUpdate(index, $event)"
         />
         <div
-          v-if="allowDelete"
+          v-if="isDeleteAllowed"
           class="collection-item__actions"
         >
           <button
             type="button"
             class="form-generator-collection__btn btn-delete"
-            @click.prevent="onDelete(index)"
+            @click.prevent="onDeleteButtonClick(index)"
           >
             {{ deleteButtonLabel }}
           </button>
         </div>
       </div>
       <button
-        v-if="allowAdd"
+        v-if="isAddAllow"
         type="button"
         class="form-generator-collection__btn btn-add"
-        @click.prevent="onAdd"
+        @click.prevent="onAddButtonClick"
       >
         {{ addButtonLabel }}
       </button>
     </div>
-  </form-generator-form-item>
+  </form-generator-form-field>
 </template>
 
 <script lang="ts">
@@ -60,7 +59,7 @@ import cloneDeep from 'lodash/cloneDeep'
 import { Schema, Errors, Model } from '../types'
 
 import FormGenerator from './FormGenerator.vue'
-import FormGeneratorFormItem from './FormGeneratorFormItem.vue'
+import FormGeneratorFormField from './FormGeneratorFormField.vue'
 import FormGeneratorLabel from './FormGeneratorLabel.vue'
 import FormGeneratorHelp from './FormGeneratorHelp.vue'
 
@@ -68,57 +67,57 @@ export default Vue.extend({
   name: 'FormGeneratorCollection',
   components: {
     FormGenerator,
-    FormGeneratorFormItem,
+    FormGeneratorFormField,
     FormGeneratorLabel,
     FormGeneratorHelp
   },
   props: {
     id: {
-      type: String as () => string,
+      type: String,
       required: true
     },
     value: {
-      type: Array as () => any[],
+      type: Array as () => Model[],
       required: true
     },
     errors: {
-      type: Array as () => { [key: number]: Errors },
-      default: () => {}
+      type: Array as () => Errors[],
+      default: () => []
     },
     schema: {
       type: Array as () => Schema,
       required: true
     },
     label: {
-      type: String as () => string,
+      type: String,
       default: ''
     },
     formGroupClassName: {
-      type: String as () => string,
+      type: String,
       default: ''
     },
     help: {
-      type: String as () => string,
+      type: String,
       default: ''
     },
     required: {
-      type: Boolean as () => boolean,
+      type: Boolean,
       default: true
     },
-    allowAdd: {
-      type: Boolean as () => boolean,
+    isAddAllow: {
+      type: Boolean,
       default: false
     },
     addButtonLabel: {
-      type: String as () => string,
+      type: String,
       default: 'Add new'
     },
-    allowDelete: {
-      type: Boolean as () => boolean,
+    isDeleteAllowed: {
+      type: Boolean,
       default: false
     },
     deleteButtonLabel: {
-      type: String as () => string,
+      type: String,
       default: 'Delete'
     }
   },
@@ -130,7 +129,8 @@ export default Vue.extend({
       return get(this.errors, index, {})
     },
     updateValue (value: Model) {
-      this.$emit(`update:value`, value)
+      this.$emit('update:value', value)
+      this.$emit('input', value)
     },
     onItemModelUpdate (index: number, value: Model) {
       const clonedValue = cloneDeep(this.value)
@@ -139,17 +139,16 @@ export default Vue.extend({
 
       this.updateValue(clonedValue)
     },
-    onDelete (index: number) {
+    onDeleteButtonClick (index: number) {
       const clonedValue = cloneDeep(this.value)
 
       clonedValue.splice(index, 1)
 
       this.updateValue(clonedValue)
     },
-    onAdd () {
+    onAddButtonClick () {
       const clonedValue = cloneDeep(this.value)
 
-      // TODO check this code
       const defaultItem = {}
       Object.values(this.schema).forEach((field) => {
         set(defaultItem, field.path, field.params.default || '')
@@ -195,7 +194,7 @@ export default Vue.extend({
     }
 
     &::v-deep {
-      .form-generator-form-item {
+      .form-generator-form-field {
         padding: 0;
       }
     }

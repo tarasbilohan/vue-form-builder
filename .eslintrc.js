@@ -6,19 +6,15 @@ module.exports = {
   extends: [
     'plugin:vue/recommended',
     '@vue/standard',
-    '@vue/typescript'
+    '@vue/typescript/recommended'
   ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'arrow-parens': ['error', 'always'],
-    'padding-line-between-statements': [
-      'error',
-      { blankLine: 'always', prev: '*', next: 'return' }
-    ]
+    'arrow-parens': ['error', 'always']
   },
   parserOptions: {
-    parser: '@typescript-eslint/parser'
+    ecmaVersion: 2020
   },
   overrides: [
     {

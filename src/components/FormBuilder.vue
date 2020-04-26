@@ -18,17 +18,18 @@
       @update:model="onModelUpdate"
     />
     <div
-      slot="actions"
       :class="`form-builder__actions--${actionsAlign}`"
       class="form-builder__actions actions"
     >
-      <button
-        type="button"
-        class="actions__submit-btn form-btn"
-        @click.prevent="onSubmitBtnClick"
-      >
-        {{ submitButtonLabel }}
-      </button>
+      <slot name="actions">
+        <button
+          type="button"
+          class="actions__submit-btn form-btn"
+          @click.prevent="onSubmitBtnClick"
+        >
+          {{ submitButtonLabel }}
+        </button>
+      </slot>
     </div>
   </form>
 </template>
@@ -37,6 +38,7 @@
 import Vue from 'vue'
 import kebabCase from 'lodash/kebabCase'
 import isArray from 'lodash/isArray'
+import has from 'lodash/has'
 
 import { Schema, Errors, Model, ErrorMessages } from '../types'
 
@@ -63,7 +65,7 @@ export default Vue.extend({
       default: () => ({})
     },
     id: {
-      type: String as () => string,
+      type: String,
       required: true
     },
     actionsAlign: {
@@ -74,7 +76,7 @@ export default Vue.extend({
       }
     },
     submitButtonLabel: {
-      type: String as () => string,
+      type: String,
       default: 'Submit'
     }
   },
@@ -95,9 +97,9 @@ export default Vue.extend({
       return kebabCase(this.id)
     },
     firstGlobalError (): ErrorMessages {
-      if (this.errors.hasOwnProperty(0)) {
+      if (has(this.errors, 0)) {
         return isArray(this.errors[0]) ? this.errors[0] : []
-      } else if (this.errors.hasOwnProperty('0')) {
+      } else if (has(this.errors, '0')) {
         return isArray(this.errors['0']) ? this.errors['0'] : []
       }
 
@@ -159,6 +161,7 @@ export default Vue.extend({
       border: none;
       margin-left: 15px;
       margin-bottom: 15px;
+      cursor: pointer;
     }
   }
 }

@@ -15,22 +15,22 @@ export default Vue.extend({
   name: 'FormGeneratorLabel',
   props: {
     forInput: {
-      type: String as () => string,
+      type: String,
       required: true
     },
     label: {
-      type: String as () => string,
+      type: String,
       required: true
     },
     required: {
-      type: Boolean as () => boolean,
+      type: Boolean,
       default: true
     }
   }
 })
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .form-generator-label {
   display: block;
   font-size: 14px;

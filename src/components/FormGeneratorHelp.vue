@@ -14,7 +14,7 @@ export default Vue.extend({
   name: 'FormGeneratorHelp',
   props: {
     help: {
-      type: String as () => string,
+      type: String,
       default: ''
     }
   }

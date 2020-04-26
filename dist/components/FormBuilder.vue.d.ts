@@ -1,18 +1,18 @@
 import Vue from 'vue';
-import { Schema, Errors, Model, ErrorMessages } from '../types';
+import { Schema, Errors, ErrorMessages } from '../types';
 declare const _default: import("vue/types/vue").ExtendedVue<Vue, unknown, {
-    onModelUpdate(model: Model): void;
+    onModelUpdate(model: object): void;
     onSubmitBtnClick(): void;
     onFormEnter(): void;
 }, {
-    generatorModel: Model;
+    generatorModel: object;
     generatorSchema: Schema;
     generatorErrors: Errors;
     generatorId: string;
     builderId: string;
     firstGlobalError: ErrorMessages;
 }, {
-    model: Model;
+    model: object;
     schema: Schema;
     errors: Errors;
     id: string;

@@ -1,14 +1,14 @@
 import Vue from 'vue';
-import { Schema, Errors, Model, SchemaField, SchemaFieldParams } from '../types';
+import { Schema, Errors, SchemaField, SchemaFieldParams, ErrorMessages } from '../types';
 declare const _default: import("vue/types/vue").ExtendedVue<Vue, unknown, {
-    getFieldValue(field: SchemaField): any;
-    getFieldErrors(field: SchemaField): any;
+    getFieldValue(field: SchemaField): unknown;
+    getFieldErrors(field: SchemaField): ErrorMessages | Errors;
     getFieldProps(field: SchemaField): SchemaFieldParams;
     onFieldUpdate(field: SchemaField, value: unknown): void;
 }, unknown, {
-    model: Model;
+    id: string;
+    model: object;
     schema: Schema;
     errors: Errors;
-    id: string;
 }>;
 export default _default;

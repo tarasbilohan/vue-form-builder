@@ -14,5 +14,6 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
     placeholder: string;
     help: string;
     required: boolean;
+    disabled: boolean;
 }>;
 export default _default;

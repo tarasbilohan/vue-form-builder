@@ -2,6 +2,11 @@
 
 In development, not yet stable
 
+## Install
+```
+npm i @tptshk/vue-form-builder
+```
+
 ## Project setup
 ```
 npm install
@@ -25,4 +30,12 @@ npm run test:unit
 ### Lints and fixes files
 ```
 npm run lint
+```
+
+### Storybook
+```
+npm run storybook:serve
+```
+```
+npm run storybook:build
 ```

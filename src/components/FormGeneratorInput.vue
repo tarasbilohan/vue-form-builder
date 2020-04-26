@@ -1,10 +1,9 @@
 <template>
-  <form-generator-form-item
+  <form-generator-form-field
     :class-name="formGroupClassName"
     class="form-generator-text"
   >
     <form-generator-label
-      slot="label"
       :for-input="id"
       :label="label"
       :required="required"
@@ -20,14 +19,12 @@
       @input="onInput"
     >
     <form-generator-help
-      slot="help"
       :help="help"
     />
     <form-generator-error
-      slot="error"
       :errors="errors"
     />
-  </form-generator-form-item>
+  </form-generator-form-field>
 </template>
 
 <script lang="ts">
@@ -35,7 +32,7 @@ import Vue from 'vue'
 
 import { ErrorMessages } from '../types'
 
-import FormGeneratorFormItem from './FormGeneratorFormItem.vue'
+import FormGeneratorFormField from './FormGeneratorFormField.vue'
 import FormGeneratorLabel from './FormGeneratorLabel.vue'
 import FormGeneratorHelp from './FormGeneratorHelp.vue'
 import FormGeneratorError from './FormGeneratorError.vue'
@@ -43,14 +40,14 @@ import FormGeneratorError from './FormGeneratorError.vue'
 export default Vue.extend({
   name: 'FormGeneratorInput',
   components: {
-    FormGeneratorFormItem,
+    FormGeneratorFormField,
     FormGeneratorLabel,
     FormGeneratorHelp,
     FormGeneratorError
   },
   props: {
     id: {
-      type: String as () => string,
+      type: String,
       required: true
     },
     value: {
@@ -76,31 +73,31 @@ export default Vue.extend({
       }
     },
     label: {
-      type: String as () => string,
+      type: String,
       default: ''
     },
     formGroupClassName: {
-      type: String as () => string,
+      type: String,
       default: ''
     },
     placeholder: {
-      type: String as () => string,
+      type: String,
       default: ''
     },
     help: {
-      type: String as () => string,
+      type: String,
       default: ''
     },
     required: {
-      type: Boolean as () => boolean,
+      type: Boolean,
       default: true
     },
     readonly: {
-      type: Boolean as () => boolean,
+      type: Boolean,
       default: false
     },
     disabled: {
-      type: Boolean as () => boolean,
+      type: Boolean,
       default: false
     }
   },
@@ -109,6 +106,7 @@ export default Vue.extend({
       const target = event.target as HTMLInputElement
 
       this.$emit('update:value', target.value)
+      this.$emit('input', target.value)
     }
   }
 })
@@ -122,6 +120,7 @@ export default Vue.extend({
     border-radius: 4px;
     border: solid 1px #d2d2d2;
     padding: 0 10px;
+    box-sizing: border-box;
 
     &::placeholder {
       opacity: 0.5;

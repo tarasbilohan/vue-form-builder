@@ -20,11 +20,15 @@ import set from 'lodash/set'
 import cloneDeep from 'lodash/cloneDeep'
 import kebabCase from 'lodash/kebabCase'
 
-import { Schema, Errors, Model, SchemaField, SchemaFieldParams } from '../types'
+import { Schema, Errors, Model, SchemaField, SchemaFieldParams, ErrorMessages } from '../types'
 
 export default Vue.extend({
   name: 'FormGenerator',
   props: {
+    id: {
+      type: String,
+      required: true
+    },
     model: {
       type: Object as () => Model,
       required: true
@@ -34,21 +38,15 @@ export default Vue.extend({
       required: true
     },
     errors: {
-      // TODO check prop type
-      // type: [Array, Object] as () => Errors,
       type: Object as () => Errors,
       default: () => ({})
-    },
-    id: {
-      type: String as () => string,
-      required: true
     }
   },
   methods: {
-    getFieldValue (field: SchemaField): any {
+    getFieldValue (field: SchemaField): unknown {
       return get(this.model, field.path)
     },
-    getFieldErrors (field: SchemaField): any {
+    getFieldErrors (field: SchemaField): ErrorMessages | Errors {
       return get(this.errors, field.path)
     },
     getFieldProps (field: SchemaField): SchemaFieldParams {

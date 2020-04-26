@@ -1,9 +1,10 @@
 import forIn from 'lodash/forIn'
 import isObject from 'lodash/isObject'
 import isArray from 'lodash/isArray'
+import { Model } from '@/types'
 
 function attachPropertyValueToFormData (formData: FormData, property: string, value: unknown, formPrefix = ''): void {
-  let fullProperty = formPrefix.length ? `${formPrefix}[${property}]` : property
+  const fullProperty = formPrefix.length ? `${formPrefix}[${property}]` : property
 
   if (isObject(value) || isArray(value)) {
     forIn(value, (subValue, subProperty) => {
@@ -14,7 +15,7 @@ function attachPropertyValueToFormData (formData: FormData, property: string, va
   }
 }
 
-export function toFormData (object: object, formPrefix: string = ''): FormData {
+export function toFormData (object: Model, formPrefix = ''): FormData {
   const formData = new FormData()
 
   forIn(object, function (value, property) {
