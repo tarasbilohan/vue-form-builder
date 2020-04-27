@@ -1,7 +1,7 @@
 import forIn from 'lodash/forIn'
 import isObject from 'lodash/isObject'
 import isArray from 'lodash/isArray'
-import { Model } from '@/types'
+import { Model } from '../types'
 
 function attachPropertyValueToFormData (formData: FormData, property: string, value: unknown, formPrefix = ''): void {
   const fullProperty = formPrefix.length ? `${formPrefix}[${property}]` : property

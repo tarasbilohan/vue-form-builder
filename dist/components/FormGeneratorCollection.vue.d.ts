@@ -1,15 +1,15 @@
 import Vue from 'vue';
-import { Schema, Errors } from '../types';
+import { Schema, Errors, Model } from '../types';
 declare const _default: import("vue/types/vue").ExtendedVue<Vue, unknown, {
     getFormGeneratorId(index: number): string;
     getFormGeneratorErrors(index: number): Errors;
-    updateValue(value: object): void;
-    onItemModelUpdate(index: number, value: object): void;
+    updateValue(value: Model[]): void;
+    onItemModelUpdate(index: number, value: Model): void;
     onDeleteButtonClick(index: number): void;
     onAddButtonClick(): void;
 }, unknown, {
     id: string;
-    value: object[];
+    value: Model[];
     errors: Errors[];
     schema: Schema;
     label: string;

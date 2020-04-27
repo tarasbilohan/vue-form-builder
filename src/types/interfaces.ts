@@ -1,5 +1,9 @@
 import { ErrorMessages } from './types'
 
+export interface Model {
+  [key: string]: string | number | boolean | Model | string[] | number[] | boolean[] | Model[];
+}
+
 export interface SchemaFieldParams {
   id?: string;
   label?: string;

@@ -128,7 +128,7 @@ export default Vue.extend({
     getFormGeneratorErrors (index: number): Errors {
       return get(this.errors, index, {})
     },
-    updateValue (value: Model) {
+    updateValue (value: Model[]) {
       this.$emit('update:value', value)
       this.$emit('input', value)
     },

@@ -1,7 +1,5 @@
 import { RadioOption, SchemaField, SelectOption } from './interfaces'
 
-export type Model = object
-
 export type Schema = SchemaField[]
 
 export type ErrorMessages = string[]
