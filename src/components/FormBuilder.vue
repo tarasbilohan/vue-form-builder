@@ -1,6 +1,7 @@
 <template>
   <form
     :id="builderId"
+    :autocomplete="autocomplete"
     class="form-builder"
     @keyup.enter="onFormEnter"
   >
@@ -67,6 +68,10 @@ export default Vue.extend({
     id: {
       type: String,
       required: true
+    },
+    autocomplete: {
+      type: String,
+      default: 'on'
     },
     actionsAlign: {
       type: String as () => ('right' | 'left' | 'center'),

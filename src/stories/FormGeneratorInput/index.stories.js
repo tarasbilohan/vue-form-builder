@@ -48,6 +48,9 @@ export const withDynamicProps = () => ({
     },
     disabled: {
       default: boolean('Disabled', false)
+    },
+    autocomplete: {
+      default: text('Autocomplete', '')
     }
   },
   data () {
@@ -81,6 +84,7 @@ export const withDynamicProps = () => ({
         :required="required"
         :readonly="readonly"
         :disabled="disabled"
+        :autocomplete="autocomplete"
         @update:value="onUpdateValue"
         @input="onInput"
       />

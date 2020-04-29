@@ -15,6 +15,7 @@
       :value="value"
       :readonly="readonly"
       :disabled="disabled"
+      :autocomplete="autocomplete"
       class="form-generator-text__input"
       @input="onInput"
     >
@@ -99,6 +100,10 @@ export default Vue.extend({
     disabled: {
       type: Boolean,
       default: false
+    },
+    autocomplete: {
+      type: String,
+      default: 'on'
     }
   },
   methods: {

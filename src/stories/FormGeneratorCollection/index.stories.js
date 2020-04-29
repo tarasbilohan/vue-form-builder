@@ -1,3 +1,4 @@
+import '../Shared/styles.css'
 import { action } from '@storybook/addon-actions'
 import FormGeneratorCollection from '../../components/FormGeneratorCollection.vue'
 import { schema, model, errors } from '../Shared/address'
@@ -38,7 +39,7 @@ export const withAddressModel = () => ({
         @update:value="onUpdateValue"
         @input="onInput"
       />
-      <pre style="padding: 10px; background: #eee; border: 1px solid #ddd; border-radius: 3px;">{{ value }}</pre>
+      <pre class="vue-result-block">{{ value }}</pre>
     </div>
   `
 })
@@ -74,8 +75,8 @@ export const withErrors = () => ({
         @update:value="onUpdateValue"
         @input="onInput"
       />
-      <pre style="padding: 10px; background: #eee; border: 1px solid #ddd; border-radius: 3px;">{{ model }}</pre>
-      <pre style="padding: 10px; background: #eee; border: 1px solid #ddd; border-radius: 3px;">{{ errors }}</pre>
+      <pre class="vue-result-block">{{ model }}</pre>
+      <pre class="vue-result-block">{{ errors }}</pre>
     </div>
   `
 })
