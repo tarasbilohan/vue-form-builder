@@ -6,7 +6,6 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, unknown, {
     id: string;
     value: string | number;
     errors: ErrorMessages;
-    type: string;
     label: string;
     formGroupClassName: string;
     placeholder: string;
@@ -14,6 +13,5 @@ declare const _default: import("vue/types/vue").ExtendedVue<Vue, unknown, {
     required: boolean;
     readonly: boolean;
     disabled: boolean;
-    autocomplete: string;
 }>;
 export default _default;

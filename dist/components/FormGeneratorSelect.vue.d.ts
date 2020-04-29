@@ -1,19 +1,19 @@
 import Vue from 'vue';
-import { ErrorMessages } from '../types';
-declare const _default: import("vue/types/vue").ExtendedVue<Vue, unknown, {
-    onInput(event: InputEvent): void;
+import { ErrorMessages, SelectOptions } from '../types';
+declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
+    selectOptions: SelectOptions;
 }, unknown, {
+    computedValue: string | number;
+}, {
     id: string;
     value: string | number;
     errors: ErrorMessages;
-    type: string;
     label: string;
+    options: SelectOptions | (() => Promise<SelectOptions>);
     formGroupClassName: string;
     placeholder: string;
     help: string;
     required: boolean;
-    readonly: boolean;
     disabled: boolean;
-    autocomplete: string;
 }>;
 export default _default;

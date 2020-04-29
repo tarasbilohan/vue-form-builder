@@ -1,19 +1,20 @@
 import Vue from 'vue';
 import { ErrorMessages } from '../types';
-declare const _default: import("vue/types/vue").ExtendedVue<Vue, unknown, {
-    onInput(event: InputEvent): void;
+declare const _default: import("vue/types/vue").ExtendedVue<Vue, {
+    checked: boolean;
+}, {
+    onChange(event: InputEvent): void;
+    setValue(value: boolean): void;
 }, unknown, {
     id: string;
-    value: string | number;
+    value: boolean;
     errors: ErrorMessages;
-    type: string;
     label: string;
+    text: string;
     formGroupClassName: string;
     placeholder: string;
     help: string;
     required: boolean;
-    readonly: boolean;
     disabled: boolean;
-    autocomplete: string;
 }>;
 export default _default;
