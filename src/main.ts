@@ -13,6 +13,7 @@ import FormGeneratorSelect from './components/FormGeneratorSelect.vue'
 import FormGeneratorTextarea from './components/FormGeneratorTextarea.vue'
 
 export * from './utilities/form-data'
+export * from './types'
 
 export {
   FormBuilder,
