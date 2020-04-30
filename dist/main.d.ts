@@ -12,5 +12,6 @@ import FormGeneratorRadio from './components/FormGeneratorRadio.vue';
 import FormGeneratorSelect from './components/FormGeneratorSelect.vue';
 import FormGeneratorTextarea from './components/FormGeneratorTextarea.vue';
 export * from './utilities/form-data';
+export * from './types';
 export { FormBuilder, FormGenerator, FormGeneratorCheckbox, FormGeneratorCollection, FormGeneratorDivider, FormGeneratorError, FormGeneratorFormField, FormGeneratorHelp, FormGeneratorInput, FormGeneratorLabel, FormGeneratorRadio, FormGeneratorSelect, FormGeneratorTextarea };
 export default FormBuilder;

@@ -1,8 +1,5 @@
-(function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('vue'), require('lodash/kebabCase'), require('lodash/isArray'), require('lodash/has'), require('lodash/get'), require('lodash/set'), require('lodash/cloneDeep'), require('core-js/modules/es.array.concat'), require('lodash/forIn'), require('lodash/isObject')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'vue', 'lodash/kebabCase', 'lodash/isArray', 'lodash/has', 'lodash/get', 'lodash/set', 'lodash/cloneDeep', 'core-js/modules/es.array.concat', 'lodash/forIn', 'lodash/isObject'], factory) :
-  (global = global || self, factory(global.VueFormBuilder = {}, global.Vue, global.kebabCase, global.isArray, global.has, global.get, global.set, global.cloneDeep, null, global.forIn, global.isObject));
-}(this, (function (exports, Vue, kebabCase, isArray, has, get, set, cloneDeep, es_array_concat, forIn, isObject) { 'use strict';
+var VueFormBuilder = (function (exports, Vue, kebabCase, isArray, has, get, set, cloneDeep, es_array_concat, forIn, isObject) {
+  'use strict';
 
   Vue = Vue && Object.prototype.hasOwnProperty.call(Vue, 'default') ? Vue['default'] : Vue;
   kebabCase = kebabCase && Object.prototype.hasOwnProperty.call(kebabCase, 'default') ? kebabCase['default'] : kebabCase;
@@ -1505,7 +1502,7 @@
   exports.default = __vue_component__$2;
   exports.toFormData = toFormData;
 
-  Object.defineProperty(exports, '__esModule', { value: true });
+  return exports;
 
-})));
-//# sourceMappingURL=vue-form-builder.umd.js.map
+}({}, Vue, kebabCase, isArray, has, get, set, cloneDeep, null, forIn, isObject));
+//# sourceMappingURL=vue-form-builder.js.map
