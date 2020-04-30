@@ -1,7 +1,7 @@
 {
   "name": "@tptshk/vue-form-builder",
   "description": "Vue Form Builder",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "main": "dist/vue-form-builder.umd.js",
   "module": "dist/vue-form-builder.esm.js",
   "unpkg": "dist/vue-form-builder.min.js",
