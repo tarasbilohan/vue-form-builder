@@ -76,26 +76,26 @@ export const errors = {
   isAgreed: ['Field is agreed is required.']
 }
 
-export function validateUser () {
+export function validateUser (user) {
   const errors = {}
 
-  if (defaultTo(get(this.model, 'firstName'), '').trim().length === 0) {
+  if (defaultTo(get(user, 'firstName'), '').trim().length === 0) {
     set(errors, 'firstName', ['Field first name is required.'])
   }
 
-  if (defaultTo(get(this.model, 'lastName'), '').trim().length === 0) {
+  if (defaultTo(get(user, 'lastName'), '').trim().length === 0) {
     set(errors, 'lastName', ['Field last name is required.'])
   }
 
-  if (defaultTo(get(this.model, 'email'), '').trim().length === 0) {
+  if (defaultTo(get(user, 'email'), '').trim().length === 0) {
     set(errors, 'email', ['Field email is required.'])
   }
 
-  if (defaultTo(get(this.model, 'password'), '').trim().length === 0) {
+  if (defaultTo(get(user, 'password'), '').trim().length === 0) {
     set(errors, 'password', ['Field password is required.'])
   }
 
-  if (defaultTo(get(this.model, 'isAgreed'), false) === false) {
+  if (defaultTo(get(user, 'isAgreed'), false) === false) {
     set(errors, 'isAgreed', ['Field is agreed is required.'])
   }
 
