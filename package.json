@@ -31,7 +31,7 @@
   "scripts": {
     "build": "rimraf ./dist/ && npm run build:rollup && npm run storybook:build",
     "build:rollup": "rollup --config build/rollup.config.js",
-    "build:vue-cli": "vue-cli-service build --target lib --name vue-form-builder ./src/main.ts && rimraf ./dist/demo.html",
+    "build:vue-cli": "vue-cli-service build --target lib --name vue-form-builder ./src/index.ts && rimraf ./dist/demo.html",
     "test:unit": "vue-cli-service test:unit",
     "lint:scripts": "npx eslint --config .eslintrc.js --ext .js,.ts,.vue src/",
     "lint:styles": "stylelint **/*.{vue,scss}",

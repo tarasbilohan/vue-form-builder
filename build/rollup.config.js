@@ -9,7 +9,7 @@ import rollupPluginVue from 'rollup-plugin-vue'
 import typescript from 'typescript'
 
 const defaultOptions = {
-  input: 'src/main.ts',
+  input: 'src/index.ts',
   output: {
     name: 'VueFormBuilder',
     exports: 'named',
