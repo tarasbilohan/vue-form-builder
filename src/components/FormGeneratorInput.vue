@@ -1,7 +1,7 @@
 <template>
   <form-generator-form-field
     :class-name="formGroupClassName"
-    class="form-generator-text"
+    class="form-generator-input"
   >
     <form-generator-label
       :for-input="id"
@@ -16,7 +16,7 @@
       :readonly="readonly"
       :disabled="disabled"
       :autocomplete="autocomplete"
-      class="form-generator-text__input"
+      class="form-generator-input__input"
       @input="onInput"
     >
     <form-generator-help
@@ -118,7 +118,7 @@ export default Vue.extend({
 </script>
 
 <style lang="scss" scoped>
-.form-generator-text {
+.form-generator-input {
   &__input {
     height: 37px;
     width: 100%;
