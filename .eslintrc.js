@@ -11,7 +11,11 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'arrow-parens': ['error', 'always']
+    'arrow-parens': ['error', 'always'],
+    'padding-line-between-statements': [
+      'error',
+      { blankLine: 'always', prev: '*', next: 'return' }
+    ]
   },
   parserOptions: {
     ecmaVersion: 2020
