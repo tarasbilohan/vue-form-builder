@@ -10,6 +10,58 @@
   flex-basis: calc(50% - 8px); }
 
 /*# sourceMappingURL=FormGenerator.vue.map */
+.form-builder__error[data-v-29d64eec] {
+  padding: 0 45px;
+  margin-bottom: 15px;
+  text-align: center; }
+
+.form-builder__actions[data-v-29d64eec] {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-bottom: -15px; }
+
+.form-builder__actions--left[data-v-29d64eec] {
+  justify-content: flex-start; }
+
+.form-builder__actions--center[data-v-29d64eec] {
+  justify-content: center; }
+
+.form-builder__actions--rigth[data-v-29d64eec] {
+  justify-content: flex-end; }
+
+.form-builder__actions .form-btn[data-v-29d64eec] {
+  display: block;
+  width: 200px;
+  height: 40px;
+  border-radius: 100px;
+  background-image: linear-gradient(to left, #ff6200, #ff7d00);
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.88px;
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  border: none;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  cursor: pointer; }
+
+/*# sourceMappingURL=FormBuilder.vue.map */
+.form-generator-divider[data-v-712d3dca] {
+  width: 100%;
+  height: 1px;
+  background-color: #e3e3e3;
+  margin-bottom: 20px; }
+
+/*# sourceMappingURL=FormGeneratorDivider.vue.map */
+.form-generator-error[data-v-345167dd] {
+  font-size: 14px;
+  letter-spacing: 0.24px;
+  margin-top: 5px;
+  color: #b13232; }
+
+/*# sourceMappingURL=FormGeneratorError.vue.map */
 .form-generator-checkbox .checkbox[data-v-5fe465ed] {
   position: relative;
   display: inline-block;
@@ -104,58 +156,10 @@
   padding: 0; }
 
 /*# sourceMappingURL=FormGeneratorCollection.vue.map */
-.form-builder__error[data-v-29d64eec] {
-  padding: 0 45px;
-  margin-bottom: 15px;
-  text-align: center; }
+.form-generator-form-field[data-v-2c4b2a29] {
+  margin-bottom: 15px; }
 
-.form-builder__actions[data-v-29d64eec] {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  margin-bottom: -15px; }
-
-.form-builder__actions--left[data-v-29d64eec] {
-  justify-content: flex-start; }
-
-.form-builder__actions--center[data-v-29d64eec] {
-  justify-content: center; }
-
-.form-builder__actions--rigth[data-v-29d64eec] {
-  justify-content: flex-end; }
-
-.form-builder__actions .form-btn[data-v-29d64eec] {
-  display: block;
-  width: 200px;
-  height: 40px;
-  border-radius: 100px;
-  background-image: linear-gradient(to left, #ff6200, #ff7d00);
-  font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 0.88px;
-  color: #fff;
-  text-transform: uppercase;
-  text-align: center;
-  border: none;
-  margin-left: 15px;
-  margin-bottom: 15px;
-  cursor: pointer; }
-
-/*# sourceMappingURL=FormBuilder.vue.map */
-.form-generator-divider[data-v-712d3dca] {
-  width: 100%;
-  height: 1px;
-  background-color: #e3e3e3;
-  margin-bottom: 20px; }
-
-/*# sourceMappingURL=FormGeneratorDivider.vue.map */
-.form-generator-error[data-v-345167dd] {
-  font-size: 14px;
-  letter-spacing: 0.24px;
-  margin-top: 5px;
-  color: #b13232; }
-
-/*# sourceMappingURL=FormGeneratorError.vue.map */
+/*# sourceMappingURL=FormGeneratorFormField.vue.map */
 .form-generator-help[data-v-6e3414dc] {
   font-size: 11px;
   opacity: 0.5;
@@ -163,7 +167,7 @@
   margin-top: 5px; }
 
 /*# sourceMappingURL=FormGeneratorHelp.vue.map */
-.form-generator-text__input[data-v-22969bd9] {
+.form-generator-input__input[data-v-5b41b1f8] {
   height: 37px;
   width: 100%;
   border-radius: 4px;
@@ -171,7 +175,7 @@
   padding: 0 10px;
   box-sizing: border-box; }
 
-.form-generator-text__input[data-v-22969bd9]::placeholder {
+.form-generator-input__input[data-v-5b41b1f8]::placeholder {
   opacity: 0.5;
   font-size: 14px;
   letter-spacing: 0.3px; }
@@ -185,10 +189,6 @@
   margin-bottom: 5px; }
 
 /*# sourceMappingURL=FormGeneratorLabel.vue.map */
-.form-generator-form-field[data-v-2c4b2a29] {
-  margin-bottom: 15px; }
-
-/*# sourceMappingURL=FormGeneratorFormField.vue.map */
 .form-generator-radio .radio-button[data-v-95133d34] {
   font-size: 14px;
   margin: 0; }
@@ -242,6 +242,20 @@
   transition: 0.2s; }
 
 /*# sourceMappingURL=FormGeneratorRadio.vue.map */
+.form-generator-select__select[data-v-58aa72d2] {
+  height: 37px;
+  width: 100%;
+  border-radius: 4px;
+  border: solid 1px #d2d2d2;
+  padding: 0 10px;
+  background: #fff; }
+
+.form-generator-select__select[data-v-58aa72d2]::placeholder {
+  opacity: 0.5;
+  font-size: 14px;
+  letter-spacing: 0.3px; }
+
+/*# sourceMappingURL=FormGeneratorSelect.vue.map */
 .form-generator-textarea__input[data-v-63e0a1d9] {
   height: 37px;
   width: 100%;
@@ -257,17 +271,3 @@
   letter-spacing: 0.3px; }
 
 /*# sourceMappingURL=FormGeneratorTextarea.vue.map */
-.form-generator-select__select[data-v-58aa72d2] {
-  height: 37px;
-  width: 100%;
-  border-radius: 4px;
-  border: solid 1px #d2d2d2;
-  padding: 0 10px;
-  background: #fff; }
-
-.form-generator-select__select[data-v-58aa72d2]::placeholder {
-  opacity: 0.5;
-  font-size: 14px;
-  letter-spacing: 0.3px; }
-
-/*# sourceMappingURL=FormGeneratorSelect.vue.map */

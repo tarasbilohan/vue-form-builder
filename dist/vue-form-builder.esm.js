@@ -5,7 +5,7 @@ import has from 'lodash/has';
 import get from 'lodash/get';
 import set from 'lodash/set';
 import cloneDeep from 'lodash/cloneDeep';
-import 'core-js/modules/es.array.concat';
+import _concatInstanceProperty from '@babel/runtime-corejs3/core-js-stable/instance/concat';
 import forIn from 'lodash/forIn';
 import isObject from 'lodash/isObject';
 
@@ -124,9 +124,11 @@ function normalizeComponent(template, style, script, scopeId, isFunctionalTempla
         return originalRender(h, context);
       };
     } else {
+      var _context;
+
       // inject component registration as beforeCreate hook
       var existing = options.beforeCreate;
-      options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+      options.beforeCreate = existing ? _concatInstanceProperty(_context = []).call(_context, existing, hook) : [hook];
     }
   }
 
@@ -1001,7 +1003,7 @@ var __vue_render__$9 = function() {
   return _c(
     "form-generator-form-field",
     {
-      staticClass: "form-generator-text",
+      staticClass: "form-generator-input",
       attrs: { "class-name": _vm.formGroupClassName }
     },
     [
@@ -1010,7 +1012,7 @@ var __vue_render__$9 = function() {
       }),
       _vm._v(" "),
       _c("input", {
-        staticClass: "form-generator-text__input",
+        staticClass: "form-generator-input__input",
         attrs: {
           id: _vm.id,
           type: _vm.type,
@@ -1033,7 +1035,7 @@ var __vue_render__$9 = function() {
 var __vue_staticRenderFns__$9 = [];
 __vue_render__$9._withStripped = true;
   const __vue_inject_styles__$9 = undefined;
-  const __vue_scope_id__$9 = "data-v-22969bd9";
+  const __vue_scope_id__$9 = "data-v-5b41b1f8";
   const __vue_module_identifier__$9 = undefined;
   const __vue_is_functional_template__$9 = false;
   const __vue_component__$9 = normalizeComponent(

@@ -1,8 +1,8 @@
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('vue'), require('lodash/kebabCase'), require('lodash/isArray'), require('lodash/has'), require('lodash/get'), require('lodash/set'), require('lodash/cloneDeep'), require('core-js/modules/es.array.concat'), require('lodash/forIn'), require('lodash/isObject')) :
-  typeof define === 'function' && define.amd ? define(['exports', 'vue', 'lodash/kebabCase', 'lodash/isArray', 'lodash/has', 'lodash/get', 'lodash/set', 'lodash/cloneDeep', 'core-js/modules/es.array.concat', 'lodash/forIn', 'lodash/isObject'], factory) :
-  (global = global || self, factory(global.VueFormBuilder = {}, global.Vue, global.kebabCase, global.isArray, global.has, global.get, global.set, global.cloneDeep, null, global.forIn, global.isObject));
-}(this, (function (exports, Vue, kebabCase, isArray, has, get, set, cloneDeep, es_array_concat, forIn, isObject) { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('vue'), require('lodash/kebabCase'), require('lodash/isArray'), require('lodash/has'), require('lodash/get'), require('lodash/set'), require('lodash/cloneDeep'), require('@babel/runtime-corejs3/core-js-stable/instance/concat'), require('lodash/forIn'), require('lodash/isObject')) :
+  typeof define === 'function' && define.amd ? define(['exports', 'vue', 'lodash/kebabCase', 'lodash/isArray', 'lodash/has', 'lodash/get', 'lodash/set', 'lodash/cloneDeep', '@babel/runtime-corejs3/core-js-stable/instance/concat', 'lodash/forIn', 'lodash/isObject'], factory) :
+  (global = global || self, factory(global.VueFormBuilder = {}, global.Vue, global.kebabCase, global.isArray, global.has, global.get, global.set, global.cloneDeep, global._concatInstanceProperty, global.forIn, global.isObject));
+}(this, (function (exports, Vue, kebabCase, isArray, has, get, set, cloneDeep, _concatInstanceProperty, forIn, isObject) { 'use strict';
 
   Vue = Vue && Object.prototype.hasOwnProperty.call(Vue, 'default') ? Vue['default'] : Vue;
   kebabCase = kebabCase && Object.prototype.hasOwnProperty.call(kebabCase, 'default') ? kebabCase['default'] : kebabCase;
@@ -11,6 +11,7 @@
   get = get && Object.prototype.hasOwnProperty.call(get, 'default') ? get['default'] : get;
   set = set && Object.prototype.hasOwnProperty.call(set, 'default') ? set['default'] : set;
   cloneDeep = cloneDeep && Object.prototype.hasOwnProperty.call(cloneDeep, 'default') ? cloneDeep['default'] : cloneDeep;
+  _concatInstanceProperty = _concatInstanceProperty && Object.prototype.hasOwnProperty.call(_concatInstanceProperty, 'default') ? _concatInstanceProperty['default'] : _concatInstanceProperty;
   forIn = forIn && Object.prototype.hasOwnProperty.call(forIn, 'default') ? forIn['default'] : forIn;
   isObject = isObject && Object.prototype.hasOwnProperty.call(isObject, 'default') ? isObject['default'] : isObject;
 
@@ -129,9 +130,11 @@
           return originalRender(h, context);
         };
       } else {
+        var _context;
+
         // inject component registration as beforeCreate hook
         var existing = options.beforeCreate;
-        options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+        options.beforeCreate = existing ? _concatInstanceProperty(_context = []).call(_context, existing, hook) : [hook];
       }
     }
 
@@ -1006,7 +1009,7 @@
     return _c(
       "form-generator-form-field",
       {
-        staticClass: "form-generator-text",
+        staticClass: "form-generator-input",
         attrs: { "class-name": _vm.formGroupClassName }
       },
       [
@@ -1015,7 +1018,7 @@
         }),
         _vm._v(" "),
         _c("input", {
-          staticClass: "form-generator-text__input",
+          staticClass: "form-generator-input__input",
           attrs: {
             id: _vm.id,
             type: _vm.type,
@@ -1038,7 +1041,7 @@
   var __vue_staticRenderFns__$9 = [];
   __vue_render__$9._withStripped = true;
     const __vue_inject_styles__$9 = undefined;
-    const __vue_scope_id__$9 = "data-v-22969bd9";
+    const __vue_scope_id__$9 = "data-v-5b41b1f8";
     const __vue_module_identifier__$9 = undefined;
     const __vue_is_functional_template__$9 = false;
     const __vue_component__$9 = normalizeComponent(

@@ -1,4 +1,4 @@
-var VueFormBuilder = (function (exports, Vue, kebabCase, isArray, has, get, set, cloneDeep, es_array_concat, forIn, isObject) {
+var VueFormBuilder = (function (exports, Vue, kebabCase, isArray, has, get, set, cloneDeep, _concatInstanceProperty, forIn, isObject) {
   'use strict';
 
   Vue = Vue && Object.prototype.hasOwnProperty.call(Vue, 'default') ? Vue['default'] : Vue;
@@ -8,6 +8,7 @@ var VueFormBuilder = (function (exports, Vue, kebabCase, isArray, has, get, set,
   get = get && Object.prototype.hasOwnProperty.call(get, 'default') ? get['default'] : get;
   set = set && Object.prototype.hasOwnProperty.call(set, 'default') ? set['default'] : set;
   cloneDeep = cloneDeep && Object.prototype.hasOwnProperty.call(cloneDeep, 'default') ? cloneDeep['default'] : cloneDeep;
+  _concatInstanceProperty = _concatInstanceProperty && Object.prototype.hasOwnProperty.call(_concatInstanceProperty, 'default') ? _concatInstanceProperty['default'] : _concatInstanceProperty;
   forIn = forIn && Object.prototype.hasOwnProperty.call(forIn, 'default') ? forIn['default'] : forIn;
   isObject = isObject && Object.prototype.hasOwnProperty.call(isObject, 'default') ? isObject['default'] : isObject;
 
@@ -126,9 +127,11 @@ var VueFormBuilder = (function (exports, Vue, kebabCase, isArray, has, get, set,
           return originalRender(h, context);
         };
       } else {
+        var _context;
+
         // inject component registration as beforeCreate hook
         var existing = options.beforeCreate;
-        options.beforeCreate = existing ? [].concat(existing, hook) : [hook];
+        options.beforeCreate = existing ? _concatInstanceProperty(_context = []).call(_context, existing, hook) : [hook];
       }
     }
 
@@ -1003,7 +1006,7 @@ var VueFormBuilder = (function (exports, Vue, kebabCase, isArray, has, get, set,
     return _c(
       "form-generator-form-field",
       {
-        staticClass: "form-generator-text",
+        staticClass: "form-generator-input",
         attrs: { "class-name": _vm.formGroupClassName }
       },
       [
@@ -1012,7 +1015,7 @@ var VueFormBuilder = (function (exports, Vue, kebabCase, isArray, has, get, set,
         }),
         _vm._v(" "),
         _c("input", {
-          staticClass: "form-generator-text__input",
+          staticClass: "form-generator-input__input",
           attrs: {
             id: _vm.id,
             type: _vm.type,
@@ -1035,7 +1038,7 @@ var VueFormBuilder = (function (exports, Vue, kebabCase, isArray, has, get, set,
   var __vue_staticRenderFns__$9 = [];
   __vue_render__$9._withStripped = true;
     const __vue_inject_styles__$9 = undefined;
-    const __vue_scope_id__$9 = "data-v-22969bd9";
+    const __vue_scope_id__$9 = "data-v-5b41b1f8";
     const __vue_module_identifier__$9 = undefined;
     const __vue_is_functional_template__$9 = false;
     const __vue_component__$9 = normalizeComponent(
@@ -1504,5 +1507,5 @@ var VueFormBuilder = (function (exports, Vue, kebabCase, isArray, has, get, set,
 
   return exports;
 
-}({}, Vue, kebabCase, isArray, has, get, set, cloneDeep, null, forIn, isObject));
+}({}, Vue, kebabCase, isArray, has, get, set, cloneDeep, _concatInstanceProperty, forIn, isObject));
 //# sourceMappingURL=vue-form-builder.js.map
