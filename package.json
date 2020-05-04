@@ -5,7 +5,7 @@
   "main": "dist/vue-form-builder.umd.js",
   "module": "dist/vue-form-builder.esm.js",
   "unpkg": "dist/vue-form-builder.min.js",
-  "types": "dist/main.d.ts",
+  "types": "dist/index.d.ts",
   "style": "dist/vue-form-builder.umd.css",
   "keywords": [
     "vue",
