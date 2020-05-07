@@ -1,15 +1,3 @@
-.form-generator[data-v-62863dd6] {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between; }
-
-.form-generator__field[data-v-62863dd6] {
-  flex-basis: 100%; }
-
-.form-generator__field.half[data-v-62863dd6] {
-  flex-basis: calc(50% - 8px); }
-
-/*# sourceMappingURL=FormGenerator.vue.map */
 .form-builder__error[data-v-29d64eec] {
   padding: 0 45px;
   margin-bottom: 15px;
@@ -48,13 +36,37 @@
   cursor: pointer; }
 
 /*# sourceMappingURL=FormBuilder.vue.map */
-.form-generator-divider[data-v-712d3dca] {
-  width: 100%;
-  height: 1px;
-  background-color: #e3e3e3;
-  margin-bottom: 20px; }
+.form-generator-collection__label[data-v-010fa73b] {
+  margin-bottom: 15px; }
 
-/*# sourceMappingURL=FormGeneratorDivider.vue.map */
+.form-generator-collection__btn[data-v-010fa73b] {
+  border-radius: 4px;
+  background-image: linear-gradient(to left, #9e9e9e, #b5b5b5);
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.88px;
+  color: #fff;
+  text-align: center;
+  border: none;
+  padding: 5px 10px; }
+
+.form-generator-collection .btn-add[data-v-010fa73b] {
+  background-image: linear-gradient(to left, #329235, #41a544); }
+
+.form-generator-collection .btn-delete[data-v-010fa73b] {
+  background-image: linear-gradient(to left, #d84727, #de5638); }
+
+.form-generator-collection .collection-item__actions[data-v-010fa73b] {
+  text-align: right; }
+
+.form-generator-collection .collection-item[data-v-010fa73b] .form-generator-form-field {
+  padding: 0; }
+
+/*# sourceMappingURL=FormGeneratorCollection.vue.map */
+.form-generator-form-field[data-v-2c4b2a29] {
+  margin-bottom: 15px; }
+
+/*# sourceMappingURL=FormGeneratorFormField.vue.map */
 .form-generator-error[data-v-345167dd] {
   font-size: 14px;
   letter-spacing: 0.24px;
@@ -62,6 +74,20 @@
   color: #b13232; }
 
 /*# sourceMappingURL=FormGeneratorError.vue.map */
+.form-generator-divider[data-v-712d3dca] {
+  width: 100%;
+  height: 1px;
+  background-color: #e3e3e3;
+  margin-bottom: 20px; }
+
+/*# sourceMappingURL=FormGeneratorDivider.vue.map */
+.form-generator-help[data-v-6e3414dc] {
+  font-size: 11px;
+  opacity: 0.5;
+  letter-spacing: 0.24px;
+  margin-top: 5px; }
+
+/*# sourceMappingURL=FormGeneratorHelp.vue.map */
 .form-generator-checkbox .checkbox[data-v-5fe465ed] {
   position: relative;
   display: inline-block;
@@ -129,44 +155,26 @@
   border-radius: 0; }
 
 /*# sourceMappingURL=FormGeneratorCheckbox.vue.map */
-.form-generator-collection__label[data-v-010fa73b] {
-  margin-bottom: 15px; }
-
-.form-generator-collection__btn[data-v-010fa73b] {
-  border-radius: 4px;
-  background-image: linear-gradient(to left, #9e9e9e, #b5b5b5);
+.form-generator-label {
+  display: block;
   font-size: 14px;
-  font-weight: bold;
-  letter-spacing: 0.88px;
-  color: #fff;
-  text-align: center;
-  border: none;
-  padding: 5px 10px; }
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  margin-bottom: 5px; }
 
-.form-generator-collection .btn-add[data-v-010fa73b] {
-  background-image: linear-gradient(to left, #329235, #41a544); }
+/*# sourceMappingURL=FormGeneratorLabel.vue.map */
+.form-generator[data-v-62863dd6] {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }
 
-.form-generator-collection .btn-delete[data-v-010fa73b] {
-  background-image: linear-gradient(to left, #d84727, #de5638); }
+.form-generator__field[data-v-62863dd6] {
+  flex-basis: 100%; }
 
-.form-generator-collection .collection-item__actions[data-v-010fa73b] {
-  text-align: right; }
+.form-generator__field.half[data-v-62863dd6] {
+  flex-basis: calc(50% - 8px); }
 
-.form-generator-collection .collection-item[data-v-010fa73b] .form-generator-form-field {
-  padding: 0; }
-
-/*# sourceMappingURL=FormGeneratorCollection.vue.map */
-.form-generator-form-field[data-v-2c4b2a29] {
-  margin-bottom: 15px; }
-
-/*# sourceMappingURL=FormGeneratorFormField.vue.map */
-.form-generator-help[data-v-6e3414dc] {
-  font-size: 11px;
-  opacity: 0.5;
-  letter-spacing: 0.24px;
-  margin-top: 5px; }
-
-/*# sourceMappingURL=FormGeneratorHelp.vue.map */
+/*# sourceMappingURL=FormGenerator.vue.map */
 .form-generator-input__input[data-v-5b41b1f8] {
   height: 37px;
   width: 100%;
@@ -181,42 +189,48 @@
   letter-spacing: 0.3px; }
 
 /*# sourceMappingURL=FormGeneratorInput.vue.map */
-.form-generator-label {
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  letter-spacing: 0.3px;
-  margin-bottom: 5px; }
+.form-generator-select__select[data-v-7d9883f9] {
+  height: 37px;
+  width: 100%;
+  border-radius: 4px;
+  border: solid 1px #d2d2d2;
+  padding: 0 10px;
+  background: #fff; }
 
-/*# sourceMappingURL=FormGeneratorLabel.vue.map */
-.form-generator-radio .radio-button[data-v-95133d34] {
+.form-generator-select__select[data-v-7d9883f9]::placeholder {
+  opacity: 0.5;
+  font-size: 14px;
+  letter-spacing: 0.3px; }
+
+/*# sourceMappingURL=FormGeneratorSelect.vue.map */
+.form-generator-radio .radio-button[data-v-26be963a] {
   font-size: 14px;
   margin: 0; }
 
-.form-generator-radio .radio-button[data-v-95133d34]:hover {
+.form-generator-radio .radio-button[data-v-26be963a]:hover {
   cursor: pointer; }
 
-.form-generator-radio .radio-button[data-v-95133d34]:not(:last-child) {
+.form-generator-radio .radio-button[data-v-26be963a]:not(:last-child) {
   margin-right: 35px; }
 
-.form-generator-radio .radio-button__input[data-v-95133d34] {
+.form-generator-radio .radio-button__input[data-v-26be963a] {
   position: absolute;
   z-index: -1;
   opacity: 0;
   margin: 0; }
 
-.form-generator-radio .radio-button__input:checked + .radio-button__title[data-v-95133d34]::after {
+.form-generator-radio .radio-button__input:checked + .radio-button__title[data-v-26be963a]::after {
   opacity: 1; }
 
-.form-generator-radio .radio-button__input:checked + .radio-button__title[data-v-95133d34]::before {
+.form-generator-radio .radio-button__input:checked + .radio-button__title[data-v-26be963a]::before {
   border-color: #f27023;
   background: #f27023; }
 
-.form-generator-radio .radio-button__title[data-v-95133d34] {
+.form-generator-radio .radio-button__title[data-v-26be963a] {
   position: relative;
   padding: 0 0 0 25px; }
 
-.form-generator-radio .radio-button__title[data-v-95133d34]::before {
+.form-generator-radio .radio-button__title[data-v-26be963a]::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -228,7 +242,7 @@
   border-radius: 50%;
   background: #fff; }
 
-.form-generator-radio .radio-button__title[data-v-95133d34]::after {
+.form-generator-radio .radio-button__title[data-v-26be963a]::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -242,20 +256,6 @@
   transition: 0.2s; }
 
 /*# sourceMappingURL=FormGeneratorRadio.vue.map */
-.form-generator-select__select[data-v-58aa72d2] {
-  height: 37px;
-  width: 100%;
-  border-radius: 4px;
-  border: solid 1px #d2d2d2;
-  padding: 0 10px;
-  background: #fff; }
-
-.form-generator-select__select[data-v-58aa72d2]::placeholder {
-  opacity: 0.5;
-  font-size: 14px;
-  letter-spacing: 0.3px; }
-
-/*# sourceMappingURL=FormGeneratorSelect.vue.map */
 .form-generator-textarea__input[data-v-63e0a1d9] {
   height: 37px;
   width: 100%;
