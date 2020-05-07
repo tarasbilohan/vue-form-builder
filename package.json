@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/tarasbilohan/vue-form-builder#readme",
   "scripts": {
-    "build": "rimraf ./dist/ && npm run build:rollup && npm run storybook:build",
+    "build": "rimraf ./dist/ && npm run build:rollup",
     "build:rollup": "rollup --config build/rollup.config.js",
     "build:vue-cli": "vue-cli-service build --target lib --name vue-form-builder ./src/index.ts && rimraf ./dist/demo.html",
     "test:unit": "vue-cli-service test:unit",

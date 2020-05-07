@@ -20,3 +20,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+dist
+storybook-static
