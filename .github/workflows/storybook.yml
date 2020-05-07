@@ -1,0 +1,22 @@
+name: Storybook
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: '12.x'
+        registry-url: 'https://registry.npmjs.org'
+        scope: '@tptshk'
+    - name: Install dependencies
+      run: npm install
+    - name: Build Storybook and Deploy to GitHub Pages
+      run: npm run storybook:deploy -- --ci
