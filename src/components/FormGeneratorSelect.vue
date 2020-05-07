@@ -90,7 +90,7 @@ export default Vue.extend({
     },
     disabled: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   data () {
