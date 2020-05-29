@@ -8,6 +8,7 @@
       :label="label"
       :required="required"
     />
+    <slot name="before-field" />
     <label class="form-generator-checkbox__checkbox checkbox">
       <input
         :id="id"
@@ -25,6 +26,7 @@
         {{ text }}
       </label>
     </label>
+    <slot name="after-field" />
     <form-generator-help
       :help="help"
     />

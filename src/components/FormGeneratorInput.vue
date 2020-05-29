@@ -8,6 +8,7 @@
       :label="label"
       :required="required"
     />
+    <slot name="before-field" />
     <input
       :id="id"
       :type="type"
@@ -19,6 +20,7 @@
       class="form-generator-input__input"
       @input="onInput"
     >
+    <slot name="after-field" />
     <form-generator-help
       :help="help"
     />

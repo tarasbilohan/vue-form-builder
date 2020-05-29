@@ -8,6 +8,7 @@
       :label="label"
       :required="required"
     />
+    <slot name="before-field" />
     <select
       v-model="computedValue"
       :disabled="disabled"
@@ -24,6 +25,7 @@
         {{ option.label }}
       </option>
     </select>
+    <slot name="after-field" />
     <form-generator-help
       :help="help"
     />

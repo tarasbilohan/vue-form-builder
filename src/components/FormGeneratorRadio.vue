@@ -8,6 +8,7 @@
       :label="label"
       :required="required"
     />
+    <slot name="before-field" />
     <div class="radio-buttons">
       <label
         v-for="option in options"
@@ -27,6 +28,7 @@
         </span>
       </label>
     </div>
+    <slot name="after-field" />
     <form-generator-help
       :help="help"
     />

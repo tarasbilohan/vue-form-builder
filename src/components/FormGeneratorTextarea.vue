@@ -8,6 +8,7 @@
       :label="label"
       :required="required"
     />
+    <slot name="before-field" />
     <textarea
       :id="id"
       :placeholder="placeholder"
@@ -20,6 +21,7 @@
       @input="onInput"
       @keyup.enter.stop=""
     />
+    <slot name="after-field" />
     <form-generator-help
       :help="help"
     />
