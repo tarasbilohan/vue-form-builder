@@ -1,4 +1,4 @@
-import { withKnobs, text, boolean, array } from '@storybook/addon-knobs'
+import { withKnobs, text, boolean, array, number } from '@storybook/addon-knobs'
 import { action } from '@storybook/addon-actions'
 import FormGeneratorTextarea from '../../components/FormGeneratorTextarea.vue'
 
@@ -40,6 +40,12 @@ export const withDynamicProps = () => ({
     },
     disabled: {
       default: boolean('Disabled', false)
+    },
+    rows: {
+      default: number('Rows', 2)
+    },
+    cols: {
+      default: number('Cols', 20)
     }
   },
   data () {
@@ -72,6 +78,8 @@ export const withDynamicProps = () => ({
         :required="required"
         :readonly="readonly"
         :disabled="disabled"
+        :rows="rows"
+        :cols="cols"
         @update:value="onUpdateValue"
         @input="onInput"
       />

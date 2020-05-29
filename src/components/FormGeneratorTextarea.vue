@@ -14,6 +14,8 @@
       :value="value"
       :readonly="readonly"
       :disabled="disabled"
+      :rows="rows"
+      :cols="cols"
       class="form-generator-textarea__input"
       @input="onInput"
       @keyup.enter.stop=""
@@ -85,6 +87,14 @@ export default Vue.extend({
     disabled: {
       type: Boolean,
       default: false
+    },
+    rows: {
+      type: Number,
+      default: 2
+    },
+    cols: {
+      type: Number,
+      default: 20
     }
   },
   methods: {
@@ -101,7 +111,7 @@ export default Vue.extend({
 <style lang="scss" scoped>
 .form-generator-textarea {
   &__input {
-    height: 37px;
+    min-height: 37px;
     width: 100%;
     max-width: 100%;
     border-radius: 4px;
